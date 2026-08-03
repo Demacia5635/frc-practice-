@@ -1,9 +1,9 @@
 
 public class elevator {
 
-    private final double main_Height = 0.0;
-    private final double max_Height = 1.5;
-    private final double max_Speed = 0.9; // m/s
+    private final double MAIN_HEGHT = 0.0;
+    private final double MAX_HEGHT = 1.5;
+    private final double MAX_SPEED = 0.9; // m/s
 
     private double height = 0.0;
     private double speed = 0.0;
@@ -29,11 +29,11 @@ public class elevator {
     }
 
     public boolean isTop() {
-        return height >= max_Height;
+        return height >= MAX_HEGHT;
     }
 
     public boolean isBottom() {
-        return height <= main_Height;
+        return height <= MAIN_HEGHT;
     }
 
     public String getLedColor() {
@@ -42,16 +42,16 @@ public class elevator {
 
     public void update(double dt) {
 
-        speed = force * max_Speed;
+        speed = force * MAX_SPEED;
 
         double newHeight = height + speed * dt;
 
-        if (newHeight >= max_Height) {
-            height = max_Height;
+        if (newHeight >= MAX_HEGHT) {
+            height = MAX_HEGHT;
             speed = 0;
             force = 0;
-        } else if (newHeight <= main_Height) {
-            height = main_Height;
+        } else if (newHeight <= MAIN_HEGHT) {
+            height = MAIN_HEGHT;
             speed = 0;
             force = 0;
         } else {
